@@ -1,6 +1,6 @@
-package com.spring.shoppingcart.controllers;
+package com.spring.shoppingcart.controller;
 
-import com.spring.shoppingcart.services.OrderService;
+import com.spring.shoppingcart.service.OrderService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +16,7 @@ public class ItemController {
     public ItemController(OrderService orderService) {
         this.orderService = orderService;
     }
+    @GetMapping("/add")
     public void addItems(@RequestParam List<Integer> itemIds) {
         orderService.addItems(itemIds);
     }
